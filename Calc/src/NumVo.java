@@ -2,7 +2,14 @@
 public class NumVo {
 	private int num1;
 	private int num2;
+	private int result;
 	
+	public int getResult() {
+		return result;
+	}
+	public void setResult(int result) {
+		this.result = result;
+	}
 	public int getNum1() {
 		return num1;
 	}

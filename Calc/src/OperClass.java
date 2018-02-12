@@ -1,30 +1,30 @@
 import java.util.Scanner;
 
 public class OperClass {
-//	int num1;
-//	int num2;
-//	AddClass ac;
-//	SubClass ac;   // 변해야 되는
-	Hab ac;
-	
-	NumVo nc;   // 고정
+	private Hab hb;
 	
 	// 생성자
 	public OperClass() {
 		System.out.println("계산기 프로그램");
-		ac = new SubClass();
-		nc = new NumVo();
 	}
 	
-	public void inputNumber() {
+	public void setOp(Hab hb) {
+		this.hb = hb;
+	}
+	
+	public void inputNumber(NumVo nv) {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("첫번째 숫자 입력: ");
-		nc.setNum1(sc.nextInt());
+		nv.setNum1(sc.nextInt());
 		System.out.print("두번째 숫자 입력: ");
-		nc.setNum2(sc.nextInt());
+		nv.setNum2(sc.nextInt());
 	}
 	
 	public void printResult() {
-		ac.clac(nc);
+		NumVo nv = new NumVo();
+		inputNumber(nv);
+		OpVo ov = hb.clac(nv);
+		System.out.println(nv.getNum1() + ov.getOp()  
+				+ nv.getNum2() + "=" + nv.getResult());
 	}
 }
